@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <!-- 선택한 이미지를 메인 화면에서 미리보기로 표시 -->
+    <ImageView
+        android:id="@+id/ivPreview"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="#EAEAEA"
+        android:src="@android:drawable/ic_menu_gallery" />
+
+    <!-- 선택한 이미지의 파일명을 표시 -->
+    <TextView
+        android:id="@+id/tvSelectedPath"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingTop="10dp"
+        android:text="선택된 파일: 없음"
+        android:textSize="15sp" />
+
+    <!-- 갤러리에서 분석할 이미지를 선택 -->
+    <Button
+        android:id="@+id/btnSelectImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="이미지 업로드" />
+
+    <!-- 선택한 이미지를 메타데이터 분석 화면으로 전달 -->
+    <Button
+        android:id="@+id/btnAnalyze"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:enabled="false"
+        android:text="메타데이터 분석" />
+
+</LinearLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <!-- 지도와 메타데이터 목록은 스크롤 영역 안에 배치 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- 이미지에 GPS 정보가 있으면 Google Map을 표시하고, 없으면 안내 문구를 표시 -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp">
+
+                <fragment
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.MapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    map:cameraTargetLat="37.541"
+                    map:cameraTargetLng="126.986"
+                    map:cameraZoom="12" />
+
+                <TextView
+                    android:id="@+id/tvNoGps"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="GPS 정보 없음"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+            <!-- 메타데이터 분석 결과를 위험도별 체크박스 목록으로 표시 -->
+            <com.cookandroid.metatool.NonScrollListView
+                android:id="@+id/listExif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:choiceMode="multipleChoice"
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 제거 설정 Bottom Sheet를 열기 위한 하단 고정 버튼 -->
+    <Button
+        android:id="@+id/btnSaveResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="선택한 메타데이터 제거" />
+
+</LinearLayout>

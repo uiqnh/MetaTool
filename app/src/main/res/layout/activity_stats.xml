@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <!-- 전체 보호 이미지 수와 제거한 메타데이터 합계를 요약하여 표시 -->
+    <TextView
+        android:id="@+id/tvSummaryReport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="#F4FBF1"
+        android:lineSpacingExtra="4dp"
+        android:padding="16dp"
+        android:text="총 0장의 이미지에서 0개의 메타데이터를 제거하여 개인정보 노출 위험을 줄였습니다."
+        android:textColor="#222222"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- 고위험 메타데이터 제거 횟수 표시 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="고위험 개인정보 보호"
+        android:textColor="#BE001E"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvHighRiskProtected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:text="0회"
+        android:textColor="#BE001E"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <!-- 중위험 메타데이터 제거 횟수 표시 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="중위험 개인정보 보호"
+        android:textColor="#D18A00"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvMediumRiskProtected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:text="0회"
+        android:textColor="#D18A00"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <!-- 저위험 메타데이터 제거 횟수 표시 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="저위험 개인정보 보호"
+        android:textColor="#3278FF"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvLowRiskProtected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:text="0회"
+        android:textColor="#3278FF"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <!-- 버튼을 화면 하단에 배치하기 위한 여백 영역 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- 리포트 화면에서 메인 화면으로 이동 -->
+    <Button
+        android:id="@+id/btnGoMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="메인 화면으로" />
+
+</LinearLayout>
