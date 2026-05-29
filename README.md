@@ -29,9 +29,6 @@ MetaTool은 이미지에 포함된 메타데이터를 분석하고, 사용자가
 ## 프로젝트 구조
 
 ```text
-## 프로젝트 구조
-
-```text
 app/src/main
 ├── AndroidManifest.xml
 ├── java/com/cookandroid/metatool
