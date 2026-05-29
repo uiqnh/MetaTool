@@ -21,41 +21,34 @@ MetaTool은 이미지에 포함된 메타데이터를 분석하고, 사용자가
 |---|---|
 | Language | Java |
 | Platform | Android |
-| UI | XML Layout, AppCompat |
 | Map | Google Maps API |
 | Metadata | Android ExifInterface |
 | Database | SQLite |
-| UI Component | BottomSheetDialog |
 | Build | Gradle Kotlin DSL |
 
 ## 프로젝트 구조
 
 ```text
-metatool
-├── app
-│   ├── src
-│   │   └── main
-│   │       ├── AndroidManifest.xml
-│   │       ├── java/com/cookandroid/metatool
-│   │       │   ├── MainActivity.java
-│   │       │   ├── AnalyzeActivity.java
-│   │       │   ├── StatsActivity.java
-│   │       │   ├── PrivacyStatsDBHelper.java
-│   │       │   └── NonScrollListView.java
-│   │       └── res
-│   │           ├── layout
-│   │           ├── drawable
-│   │           ├── mipmap
-│   │           ├── values
-│   │           └── xml
-│   ├── build.gradle.kts
-│   └── proguard-rules.pro
-├── build.gradle.kts
-├── settings.gradle.kts
-├── gradle.properties
-├── gradlew
-├── gradlew.bat
-└── README.md
+## 프로젝트 구조
+
+```text
+app/src/main
+├── AndroidManifest.xml
+├── java/com/cookandroid/metatool
+│   ├── MainActivity.java
+│   ├── AnalyzeActivity.java
+│   ├── StatsActivity.java
+│   ├── PrivacyStatsDBHelper.java
+│   └── NonScrollListView.java
+└── res
+    ├── layout
+    │   ├── activity_main.xml
+    │   ├── activity_analyze.xml
+    │   └── activity_stats.xml
+    ├── drawable
+    ├── mipmap
+    ├── values
+    └── xml
 ```
 
 ## 주요 화면
