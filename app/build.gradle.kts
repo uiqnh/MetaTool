@@ -38,7 +38,5 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0")
     // Google 지도 표시 및 제어를 위한 라이브러리
     implementation("com.google.android.gms:play-services-maps:17.0.0")
-    // Bottom Sheet 등 Material Design UI 컴포넌트 사용을 위한 라이브러리
-    implementation("com.google.android.material:material:1.13.0")
 
 }
