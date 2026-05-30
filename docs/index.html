@@ -105,13 +105,17 @@
     }
 
     .persona-photo {
-      height: 260px;
-      background: linear-gradient(135deg, #eaf6ef, #d7eadf);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: var(--green);
-      font-size: 80px;
+      height: 300px;
+      background: var(--green-light);
+      overflow: hidden;
+    }
+
+    .persona-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 38%;
+      display: block;
     }
 
     .persona-body {
@@ -155,7 +159,7 @@
 
     .section-icon { margin-right: 8px; }
 
-    ul, ol {
+    ul {
       margin: 0;
       padding-left: 20px;
     }
@@ -268,11 +272,13 @@
       }
       .steps { grid-template-columns: repeat(2, 1fr); }
       h1 { font-size: 34px; }
+      .persona-photo { height: 340px; }
     }
 
     @media (max-width: 520px) {
       .steps { grid-template-columns: 1fr; }
       .info-row { grid-template-columns: 1fr; }
+      .persona-photo { height: 300px; }
     }
   </style>
 </head>
@@ -296,7 +302,9 @@
   <main>
     <div class="grid">
       <section class="card persona-card">
-        <div class="persona-photo">👩‍🎓</div>
+        <div class="persona-photo">
+          <img src="metatool_persona.png" alt="MetaTool 페르소나 김지민 이미지" />
+        </div>
         <div class="persona-body">
           <h2>김지민 (22)</h2>
           <p>대학생</p>
