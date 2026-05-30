@@ -8,6 +8,7 @@
     :root {
       --green: #0f5132;
       --green-light: #eaf6ef;
+      --green-soft: #f3faf6;
       --green-mid: #2e7d52;
       --gray-bg: #f6f8f7;
       --gray-line: #e1e5e3;
@@ -16,7 +17,9 @@
       --white: #fff;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -84,28 +87,26 @@
       padding: 0 20px 50px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.4fr;
-      gap: 18px;
-      margin-bottom: 18px;
-    }
-
     .card {
       background: var(--white);
       border: 1px solid var(--gray-line);
-      border-radius: 18px;
+      border-radius: 20px;
       padding: 24px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.05);
     }
 
     .persona-card {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 28px;
+      align-items: stretch;
+      margin-bottom: 18px;
       padding: 0;
       overflow: hidden;
     }
 
     .persona-photo {
-      height: 300px;
+      min-height: 420px;
       background: var(--green-light);
       overflow: hidden;
     }
@@ -118,38 +119,67 @@
       display: block;
     }
 
-    .persona-body {
-      padding: 24px;
-      text-align: center;
+    .persona-content {
+      padding: 30px 30px 30px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    .persona-body h2 {
+    .tag {
+      display: inline-block;
+      width: fit-content;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--green-light);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .persona-content h2 {
       margin: 0;
-      font-size: 28px;
+      font-size: 32px;
+      color: var(--green);
     }
 
-    .persona-body p {
+    .persona-role {
       margin: 4px 0 18px;
       color: var(--muted);
       font-weight: bold;
     }
 
-    .info-list {
-      text-align: left;
-      border-top: 1px solid var(--gray-line);
-      margin-top: 16px;
+    .persona-description {
+      margin: 0 0 20px;
+      color: #333;
     }
 
-    .info-row {
+    .info-grid {
       display: grid;
-      grid-template-columns: 120px 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 10px;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--gray-line);
-      font-size: 15px;
+      margin-top: 4px;
     }
 
-    .info-row strong { color: var(--green); }
+    .info-box {
+      background: var(--green-soft);
+      border: 1px solid #dbece2;
+      border-radius: 14px;
+      padding: 13px 14px;
+    }
+
+    .info-box strong {
+      display: block;
+      color: var(--green);
+      margin-bottom: 3px;
+      font-size: 14px;
+    }
+
+    .info-box span {
+      font-size: 14px;
+      color: #333;
+    }
 
     h3 {
       margin: 0 0 14px;
@@ -157,14 +187,18 @@
       font-size: 22px;
     }
 
-    .section-icon { margin-right: 8px; }
+    .section-icon {
+      margin-right: 8px;
+    }
 
     ul {
       margin: 0;
       padding-left: 20px;
     }
 
-    li { margin-bottom: 10px; }
+    li {
+      margin-bottom: 10px;
+    }
 
     .two-column {
       display: grid;
@@ -173,7 +207,9 @@
       margin-bottom: 18px;
     }
 
-    .scenario { margin-bottom: 18px; }
+    .scenario {
+      margin-bottom: 18px;
+    }
 
     .steps {
       display: grid;
@@ -245,16 +281,6 @@
       font-weight: bold;
     }
 
-    .highlight {
-      background: var(--green-light);
-      border-radius: 14px;
-      padding: 20px;
-      text-align: center;
-      color: var(--green);
-      font-size: 22px;
-      font-weight: bold;
-    }
-
     footer {
       text-align: center;
       color: var(--muted);
@@ -262,23 +288,64 @@
       padding: 28px;
     }
 
-    @media (max-width: 800px) {
-      .header-inner, .grid, .two-column { grid-template-columns: 1fr; }
+    @media (max-width: 900px) {
+      .header-inner {
+        grid-template-columns: 1fr;
+      }
+
       .quote {
         border-left: none;
         border-top: 1px solid rgba(255, 255, 255, 0.35);
         padding-left: 0;
         padding-top: 20px;
       }
-      .steps { grid-template-columns: repeat(2, 1fr); }
-      h1 { font-size: 34px; }
-      .persona-photo { height: 340px; }
+
+      .persona-card {
+        grid-template-columns: 1fr;
+      }
+
+      .persona-photo {
+        min-height: 360px;
+      }
+
+      .persona-content {
+        padding: 26px;
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
-    @media (max-width: 520px) {
-      .steps { grid-template-columns: 1fr; }
-      .info-row { grid-template-columns: 1fr; }
-      .persona-photo { height: 300px; }
+    @media (max-width: 620px) {
+      header {
+        padding: 34px 20px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .quote {
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.35);
+        padding-left: 0;
+        padding-top: 20px;
+        font-size: 21px;
+      }
+
+      .two-column,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .persona-photo {
+        min-height: 300px;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -300,45 +367,42 @@
   </header>
 
   <main>
-    <div class="grid">
-      <section class="card persona-card">
-        <div class="persona-photo">
-          <img src="metatool_persona.png" alt="MetaTool 페르소나 이미지" />
-        </div>
-        <div class="persona-body">
-          <h2>김지민 (22)</h2>
-          <p>대학생</p>
+    <section class="card persona-card">
+      <div class="persona-photo">
+        <img src="metatool_persona.png" alt="MetaTool 페르소나 김지민 이미지" />
+      </div>
 
-          <div class="info-list">
-            <div class="info-row">
-              <strong>사용 기기</strong>
-              <span>Android 스마트폰</span>
-            </div>
-            <div class="info-row">
-              <strong>주요 서비스</strong>
-              <span>Instagram, 카카오톡, 블로그, 온라인 커뮤니티</span>
-            </div>
-            <div class="info-row">
-              <strong>사진 사용 패턴</strong>
-              <span>여행, 카페, 일상 사진을 자주 촬영하고 공유</span>
-            </div>
-            <div class="info-row">
-              <strong>IT 활용 수준</strong>
-              <span>보통, 앱 사용에는 익숙하지만 메타데이터 개념은 잘 모름</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div class="persona-content">
+        <span class="tag">Persona</span>
+        <h2>김지민 (22)</h2>
+        <div class="persona-role">SNS에 사진을 자주 공유하는 대학생</div>
 
-      <section class="card">
-        <h3><span class="section-icon">👤</span>배경</h3>
-        <p>
+        <p class="persona-description">
           지민은 친구들과 찍은 사진이나 여행 사진을 SNS와 메신저에 자주 공유한다.
           사진 속 얼굴이나 배경은 확인하지만, 이미지 파일 내부에 촬영 날짜, 사용 기기,
           GPS 위치 정보 같은 메타데이터가 저장될 수 있다는 점은 잘 알지 못한다.
         </p>
-      </section>
-    </div>
+
+        <div class="info-grid">
+          <div class="info-box">
+            <strong>사용 기기</strong>
+            <span>Android 스마트폰</span>
+          </div>
+          <div class="info-box">
+            <strong>주요 서비스</strong>
+            <span>Instagram, 카카오톡, 블로그</span>
+          </div>
+          <div class="info-box">
+            <strong>사진 사용 패턴</strong>
+            <span>여행, 카페, 일상 사진 공유</span>
+          </div>
+          <div class="info-box">
+            <strong>IT 활용 수준</strong>
+            <span>앱 사용은 익숙하지만 메타데이터 개념은 낯섦</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="two-column">
       <section class="card">
@@ -387,24 +451,15 @@
       </section>
 
       <section class="card">
-        <h3><span class="section-icon">💬</span>핵심 문장</h3>
-        <div class="highlight">
-          “사진에는 아무것도 안 보이는데,<br />
-          위치 정보가 숨어 있을 수 있다고?”
-        </div>
+        <h3><span class="section-icon">🏁</span>사용자가 얻는 가치</h3>
+        <ul class="value-list">
+          <li>숨겨진 메타데이터를 쉽게 확인할 수 있다.</li>
+          <li>GPS 위치 정보처럼 민감한 정보를 시각적으로 확인할 수 있다.</li>
+          <li>필요한 메타데이터만 선택적으로 제거할 수 있다.</li>
+          <li>개인정보 보호 리포트를 통해 보호 활동 결과를 확인할 수 있다.</li>
+        </ul>
       </section>
     </div>
-
-    <section class="card">
-      <h3><span class="section-icon">🏁</span>사용자가 얻는 가치</h3>
-      <ul class="value-list">
-        <li>숨겨진 메타데이터를 쉽게 확인할 수 있다.</li>
-        <li>GPS 위치 정보처럼 민감한 정보를 시각적으로 확인할 수 있다.</li>
-        <li>필요한 메타데이터만 선택적으로 제거할 수 있다.</li>
-        <li>원본을 보존하거나 삭제할지 직접 선택할 수 있다.</li>
-        <li>개인정보 보호 리포트를 통해 보호 활동 결과를 확인할 수 있다.</li>
-      </ul>
-    </section>
   </main>
 
   <footer>
